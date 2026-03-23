@@ -18,8 +18,8 @@ public class InventorySlot : MonoBehaviour
 
     void Start()
     {
-    thisSlotButton = GetComponentInChildren<Button>();
-    thisSlotButton.onClick.AddListener(InspectName);        
+        thisSlotButton = GetComponentInChildren<Button>();
+        thisSlotButton.onClick.AddListener(InspectName);
     }
 
     void InspectName()
@@ -40,12 +40,21 @@ public class InventorySlot : MonoBehaviour
 
     void CloseWindow()
     {
+        inspectorWindow.SetActive(false);
 
+        closeButton.onClick.RemoveListener(CloseWindow);
+        deleteButton.onClick.RemoveListener(DeleteItem);
     }
 
     void DeleteItem()
     {
+        InventoryManager.Instance.items[slotNumber] = null;
+        InventoryManager.Instance.itemsNames[slotNumber].text = "Empty";
+        InventoryManager.Instance.itemsImages[slotNumber].sprite = null;
 
+        slotItem = null;
+
+        CloseWindow();
     }
 
 }
