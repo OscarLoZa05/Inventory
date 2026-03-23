@@ -17,7 +17,8 @@ public class InteractableItem : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        InventoryManager.Instance.AddItem(item);
+        InfinteInventoryManager.Instance.AddItem(item);
+        //InventoryManager.Instance.AddItem(item);
         Destroy(gameObject);
     }
 }
