@@ -29,7 +29,7 @@ public class InventorySlot : MonoBehaviour
             closeButton.onClick.AddListener(CloseWindow);
             deleteButton.onClick.AddListener(DeleteItem);
 
-            inspectionImage.sprite =slotItem.itemSprite;
+            inspectionImage.sprite = slotItem.itemSprite;
             inspectionName.text = slotItem.itemName;
             inspectionPrice.text = slotItem.itemSellPrice.ToString();
             inspectionDescription.text = slotItem.itemDescription;
